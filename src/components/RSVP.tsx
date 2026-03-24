@@ -1,13 +1,32 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
 export default function RSVP() {
   const ref = useScrollReveal<HTMLElement>();
   const [submitted, setSubmitted] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const shakeField = (input: HTMLInputElement) => {
+    const group = input.closest(".floating-label-group");
+    if (!group) return;
+    group.classList.add("shake");
+    setTimeout(() => group.classList.remove("shake"), 400);
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = formRef.current;
+    if (!form) return;
+
+    const fname = form.querySelector<HTMLInputElement>('input[name="firstName"]');
+    const lname = form.querySelector<HTMLInputElement>('input[name="lastName"]');
+    const email = form.querySelector<HTMLInputElement>('input[name="email"]');
+
+    if (fname && !fname.value.trim()) { shakeField(fname); fname.focus(); return; }
+    if (lname && !lname.value.trim()) { shakeField(lname); lname.focus(); return; }
+    if (email && !email.value.trim()) { shakeField(email); email.focus(); return; }
+
     setSubmitted(true);
   };
 
@@ -44,14 +63,13 @@ export default function RSVP() {
             </p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="reveal stagger-3 space-y-8 text-left">
+          <form ref={formRef} onSubmit={handleSubmit} className="reveal stagger-3 space-y-8 text-left">
             {/* Name row */}
             <div className="grid gap-8 md:grid-cols-2">
               <div className="floating-label-group">
                 <input
                   type="text"
                   name="firstName"
-                  required
                   placeholder=" "
                   className="w-full border-b border-white/15 bg-transparent py-3 font-body text-white outline-none transition-colors focus:border-gold"
                 />
@@ -61,7 +79,6 @@ export default function RSVP() {
                 <input
                   type="text"
                   name="lastName"
-                  required
                   placeholder=" "
                   className="w-full border-b border-white/15 bg-transparent py-3 font-body text-white outline-none transition-colors focus:border-gold"
                 />
@@ -74,7 +91,6 @@ export default function RSVP() {
               <input
                 type="email"
                 name="email"
-                required
                 placeholder=" "
                 className="w-full border-b border-white/15 bg-transparent py-3 font-body text-white outline-none transition-colors focus:border-gold"
               />

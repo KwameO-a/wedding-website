@@ -1,4 +1,5 @@
 import PageLoader from "@/components/PageLoader";
+import CustomCursor from "@/components/CustomCursor";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Countdown from "@/components/Countdown";
@@ -18,6 +19,7 @@ export default function Home() {
   return (
     <>
       <PageLoader />
+      <CustomCursor />
       <Navigation />
       <main>
         <Hero />

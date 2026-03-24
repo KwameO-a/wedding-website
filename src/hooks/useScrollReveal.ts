@@ -8,7 +8,7 @@ export default function useScrollReveal<T extends HTMLElement>() {
     const el = ref.current;
     if (!el) return;
 
-    const reveals = el.querySelectorAll(".reveal");
+    const reveals = el.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

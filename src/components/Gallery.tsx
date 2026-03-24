@@ -1,20 +1,20 @@
 "use client";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
-const GRADIENTS = [
-  "linear-gradient(135deg, #8B9D83, #B8A0A0)",
-  "linear-gradient(135deg, #C5A572, #D4A59A)",
-  "linear-gradient(135deg, #D4A59A, #E2D4B7)",
-  "linear-gradient(135deg, #5E7255, #8B9D83)",
-  "linear-gradient(135deg, #B8A0A0, #C5A572)",
-  "linear-gradient(135deg, #E2D4B7, #8B9D83)",
-  "linear-gradient(135deg, #C5A572, #5E7255)",
-  "linear-gradient(135deg, #D4A59A, #B8A0A0)",
+const ITEMS = [
+  { label: "The First Look", gradient: "linear-gradient(135deg, #8B9D83, #5E7255)" },
+  { label: "Golden Hour", gradient: "linear-gradient(135deg, #D4A59A, #B8A0A0)" },
+  { label: "The Proposal", gradient: "linear-gradient(135deg, #C5A572, #A68B5B)" },
+  { label: "Amalfi Dreams", gradient: "linear-gradient(135deg, #B8A0A0, #8B9D83)" },
+  { label: "Morning Light", gradient: "linear-gradient(135deg, #5E7255, #C5A572)" },
+  { label: "City Nights", gradient: "linear-gradient(135deg, #D4A59A, #C5A572)" },
+  { label: "Together Always", gradient: "linear-gradient(135deg, #8B9D83, #D4A59A)" },
+  { label: "Adventure Calls", gradient: "linear-gradient(135deg, #C5A572, #8B9D83)" },
 ];
 
 export default function Gallery() {
   const ref = useScrollReveal<HTMLElement>();
-  const allImages = [...GRADIENTS, ...GRADIENTS];
+  const allItems = [...ITEMS, ...ITEMS];
 
   return (
     <section id="gallery" ref={ref} className="py-24 md:py-32 bg-cream overflow-hidden">
@@ -36,12 +36,20 @@ export default function Gallery() {
             width: "max-content",
           }}
         >
-          {allImages.map((grad, i) => (
+          {allItems.map((item, i) => (
             <div
               key={i}
-              className="h-[420px] w-[320px] flex-shrink-0 overflow-hidden rounded-md transition-transform duration-500 ease-out hover:scale-[1.06]"
-              style={{ background: grad }}
-            />
+              className="gallery-item h-[420px] w-[320px] flex-shrink-0 overflow-hidden rounded-sm relative"
+            >
+              <div
+                className="w-full h-full flex items-center justify-center transition-transform duration-500 ease-out hover:scale-[1.06]"
+                style={{ background: item.gradient }}
+              >
+                <span className="font-display text-xl italic text-white/70">
+                  {item.label}
+                </span>
+              </div>
+            </div>
           ))}
         </div>
       </div>
