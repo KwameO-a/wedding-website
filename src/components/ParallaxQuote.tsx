@@ -1,0 +1,28 @@
+"use client";
+import useScrollReveal from "@/hooks/useScrollReveal";
+
+export default function ParallaxQuote() {
+  const ref = useScrollReveal<HTMLElement>();
+
+  return (
+    <section
+      ref={ref}
+      className="relative flex h-[50vh] items-center justify-center overflow-hidden"
+      style={{
+        background: "linear-gradient(135deg, #5E7255, #8B9D83, #D4A59A)",
+      }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/40" />
+
+      <div className="relative z-10 mx-auto max-w-3xl px-8 text-center">
+        <blockquote className="reveal stagger-1 font-display italic text-[1.5rem] md:text-[2.5rem] leading-snug text-white">
+          &ldquo;Whatever our souls are made of, his and mine are the same.&rdquo;
+        </blockquote>
+        <p className="reveal stagger-2 mt-6 font-ui text-[10px] uppercase tracking-[0.3em] text-gold-light">
+          Emily Bront&euml;
+        </p>
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,36 @@
+"use client";
+import Divider from "./Divider";
+
+export default function Footer() {
+  return (
+    <footer className="py-20 bg-soft-black text-center">
+      {/* Heartbeat dots */}
+      <div className="flex justify-center gap-3 mb-10">
+        {[0, 1, 2].map((i) => (
+          <div
+            key={i}
+            className="h-1.5 w-1.5 rounded-full bg-gold"
+            style={{
+              animation: "heartbeat 1.5s ease-in-out infinite",
+              animationDelay: `${i * 0.3}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      <h2 className="font-display text-3xl md:text-5xl text-white mb-4">
+        Emma <span className="italic text-gold">&</span> James
+      </h2>
+
+      <p className="font-ui text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">
+        June 21, 2026 &bull; The Cotswolds, England
+      </p>
+
+      <Divider dark />
+
+      <p className="mt-8 font-ui text-[10px] uppercase tracking-[0.2em] text-white/20">
+        Made with love &bull; &copy; 2026
+      </p>
+    </footer>
+  );
+}
