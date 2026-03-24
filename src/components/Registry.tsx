@@ -36,7 +36,7 @@ export default function Registry() {
 
   return (
     <section ref={ref} className="py-24 md:py-32 bg-cream">
-      <div className="mx-auto max-w-4xl px-6 md:px-10 text-center">
+      <div className="mx-auto max-w-[1100px] px-6 md:px-16 text-center">
         <p className="reveal stagger-1 font-ui text-[10px] uppercase tracking-[0.4em] text-sage mb-4">
           Gifts
         </p>

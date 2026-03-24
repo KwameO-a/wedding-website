@@ -39,7 +39,7 @@ export default function RSVP() {
         </span>
       </div>
 
-      <div className="relative mx-auto max-w-2xl px-6 md:px-10 text-center">
+      <div className="relative mx-auto max-w-[550px] px-6 md:px-10 text-center">
         <p className="reveal stagger-1 font-ui text-[10px] uppercase tracking-[0.4em] text-sage mb-4">
           Will You Join Us?
         </p>

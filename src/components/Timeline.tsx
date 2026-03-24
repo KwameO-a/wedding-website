@@ -34,7 +34,7 @@ export default function Timeline() {
 
   return (
     <section ref={ref} className="py-24 md:py-32 bg-soft-black">
-      <div className="mx-auto max-w-3xl px-6 md:px-10">
+      <div className="mx-auto max-w-[800px] px-6 md:px-16">
         <h2 className="reveal stagger-1 text-center font-display text-3xl md:text-5xl text-white mb-20">
           Our <em className="text-gold">Journey</em>
         </h2>

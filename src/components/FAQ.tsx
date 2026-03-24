@@ -31,7 +31,7 @@ export default function FAQ() {
 
   return (
     <section id="faq" ref={ref} className="py-24 md:py-32 bg-warm-white">
-      <div className="mx-auto max-w-[800px] px-6 md:px-10">
+      <div className="mx-auto max-w-[800px] px-6 md:px-16">
         <div className="text-center mb-16">
           <p className="reveal stagger-1 font-ui text-[10px] uppercase tracking-[0.4em] text-sage mb-4">
             Questions

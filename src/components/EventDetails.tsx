@@ -59,7 +59,7 @@ export default function EventDetails() {
               key={event.title}
               className={`reveal stagger-${i + 1} card-hover gradient-line-top relative bg-cream rounded-sm border border-charcoal/5 p-10`}
             >
-              <div className="mb-5 text-sage">{event.icon}</div>
+              <div className="mb-5 flex justify-center text-sage">{event.icon}</div>
               <span className="inline-block mb-4 rounded-full bg-gold/10 px-4 py-1 font-ui text-[10px] uppercase tracking-[0.2em] text-gold">
                 {event.time}
               </span>
