@@ -16,10 +16,13 @@ function getTimeLeft() {
 }
 
 export default function Countdown() {
-  const [time, setTime] = useState(getTimeLeft);
+  const [mounted, setMounted] = useState(false);
+  const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const ref = useScrollReveal<HTMLElement>();
 
   useEffect(() => {
+    setMounted(true);
+    setTime(getTimeLeft());
     const interval = setInterval(() => setTime(getTimeLeft()), 1000);
     return () => clearInterval(interval);
   }, []);
@@ -51,7 +54,7 @@ export default function Countdown() {
           {units.map((unit, i) => (
             <div key={unit.label} className={`reveal stagger-${i + 1}`}>
               <div className="font-display text-[3rem] md:text-[5.5rem] leading-none text-sage-dark">
-                {String(unit.value).padStart(unit.label === "Days" ? 3 : 2, "0")}
+                {mounted ? String(unit.value).padStart(unit.label === "Days" ? 3 : 2, "0") : "\u00A0"}
               </div>
               <div className="mt-2 font-ui text-[9px] uppercase tracking-[0.3em] text-dusty-mauve">
                 {unit.label}

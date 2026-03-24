@@ -7,10 +7,10 @@ export default function OurStory() {
   return (
     <section id="story" ref={ref} className="py-24 md:py-32 bg-cream">
       <div className="mx-auto max-w-6xl px-6 md:px-10">
-        <div className="grid gap-12 md:grid-cols-2 md:gap-16 items-center">
+        <div className="grid gap-12 md:grid-cols-2 md:gap-16 items-start">
           {/* Image */}
-          <div className="reveal stagger-1 relative">
-            <div className="relative aspect-[3/4] overflow-hidden bg-sage/10 rounded-sm group">
+          <div className="reveal stagger-1 relative md:sticky md:top-32">
+            <div className="relative aspect-[3/4] max-h-[520px] overflow-hidden bg-sage/10 rounded-sm group">
               <div
                 className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 style={{
