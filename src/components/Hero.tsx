@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 function Particles() {
   const [particles, setParticles] = useState<
@@ -39,21 +40,23 @@ function Particles() {
 export default function Hero() {
   return (
     <section className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-soft-black">
-      {/* Gradient background */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse at 20% 80%, rgba(139,157,131,0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(197,165,114,0.12) 0%, transparent 50%), radial-gradient(ellipse at 50% 90%, rgba(212,165,154,0.08) 0%, transparent 50%)",
-          animation: "heroBgScale 15s ease-in-out infinite",
-        }}
+      {/* Hero background image */}
+      <Image
+        src="/hero-couple.jpeg"
+        alt="Jesse and Katherine"
+        fill
+        priority
+        className="object-cover object-center"
+        sizes="100vw"
       />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* Particles */}
       <Particles />
 
       {/* Center content */}
-      <div className="relative z-10 text-center px-4">
+      <div className="relative z-10 text-center px-4" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}>
         {/* Eyebrow */}
         <p
           className="font-ui text-[10px] uppercase tracking-[0.4em] text-gold mb-8"
@@ -105,7 +108,7 @@ export default function Hero() {
             opacity: 0,
           }}
         >
-          October 15 &amp; 17, 2026 &bull; Kumasi, Ghana
+          October Fifteenth &amp; Seventeenth, Two Thousand &amp; Twenty-Six
         </p>
       </div>
 
