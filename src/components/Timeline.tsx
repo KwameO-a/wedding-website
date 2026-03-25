@@ -23,7 +23,7 @@ const EVENTS = [
     desc: "Sunset over the Amalfi Coast, a trembling knee, and the most beautiful \u201cyes.\u201d",
   },
   {
-    year: "June 2026",
+    year: "October 2026",
     title: "Forever Begins",
     desc: "The day we make it official, surrounded by everyone we love.",
   },

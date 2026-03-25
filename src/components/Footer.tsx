@@ -23,7 +23,7 @@ export default function Footer() {
       </h2>
 
       <p className="font-ui text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">
-        June 21, 2026 &bull; The Cotswolds, England
+        October 15 &amp; 17, 2026 &bull; Kumasi, Ghana
       </p>
 
       <Divider dark />

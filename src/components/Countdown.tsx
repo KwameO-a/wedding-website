@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
-const WEDDING_DATE = new Date("2026-06-21T15:00:00");
+const WEDDING_DATE = new Date("2026-10-15T12:00:00");
 
 function getTimeLeft() {
   const diff = WEDDING_DATE.getTime() - Date.now();

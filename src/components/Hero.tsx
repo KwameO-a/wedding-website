@@ -68,23 +68,30 @@ export default function Hero() {
 
         {/* Names */}
         {["Jesse", "&", "Katherine"].map((text, i) => (
-          <div key={text} className="overflow-hidden">
+          <div key={text} className="overflow-visible">
             <div
+              className="overflow-hidden pt-3 -mt-3"
               style={{
-                animation: "clipReveal 0.9s cubic-bezier(0.16,1,0.3,1) forwards",
-                animationDelay: `${1.8 + i * 0.2}s`,
-                transform: "translateY(100%)",
+                clipPath: "inset(-10px 0 0 0)",
               }}
             >
-              <h1
-                className={`font-display leading-[0.95] ${
-                  i === 1
-                    ? "text-[2.5rem] md:text-[5rem] lg:text-[6rem] italic text-gold"
-                    : "text-[3rem] md:text-[6rem] lg:text-[8rem] text-white"
-                }`}
+              <div
+                style={{
+                  animation: "clipReveal 0.9s cubic-bezier(0.16,1,0.3,1) forwards",
+                  animationDelay: `${1.8 + i * 0.2}s`,
+                  transform: "translateY(100%)",
+                }}
               >
-                {text}
-              </h1>
+                <h1
+                  className={`font-display leading-[1.15] ${
+                    i === 1
+                      ? "text-[2.5rem] md:text-[5rem] lg:text-[6rem] italic text-gold"
+                      : "text-[3rem] md:text-[6rem] lg:text-[8rem] text-white"
+                  }`}
+                >
+                  {text}
+                </h1>
+              </div>
             </div>
           </div>
         ))}
@@ -98,7 +105,7 @@ export default function Hero() {
             opacity: 0,
           }}
         >
-          June Twenty-First, Two Thousand &amp; Twenty-Six
+          October 15 &amp; 17, 2026 &bull; Kumasi, Ghana
         </p>
       </div>
 

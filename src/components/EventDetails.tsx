@@ -5,24 +5,22 @@ const EVENTS = [
   {
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        <path d="M3 21h18M3 7v14M21 7v14M6 7V3h12v4M9 21v-4a3 3 0 0 1 6 0v4" />
       </svg>
     ),
-    time: "3:00 PM",
-    title: "The Ceremony",
-    desc: "Exchange of vows at the beautiful St. Mary's Chapel, nestled among ancient oaks and wildflower meadows.",
+    time: "Thursday, Oct 15",
+    title: "Traditional Wedding",
+    desc: "A beautiful Ghanaian traditional ceremony at Casa Restaurant, Kumasi — where families come together in celebration.",
   },
   {
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M8 2v4M16 2v4" />
-        <path d="M17.5 8H6.5a2.5 2.5 0 0 0-2.5 2.5v0c0 2.5 3 5.5 8 9 5-3.5 8-6.5 8-9v0A2.5 2.5 0 0 0 17.5 8z" />
-        <path d="M12 8v11" />
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
       </svg>
     ),
-    time: "4:30 PM",
-    title: "Cocktail Hour",
-    desc: "Join us on the sunlit terrace for craft cocktails, canapés, and the warmth of good company.",
+    time: "Saturday, Oct 17",
+    title: "White Wedding",
+    desc: "Exchange of vows at the iconic Saint Peter\u2019s Cathedral Basilica, one of Kumasi\u2019s most beautiful churches.",
   },
   {
     icon: (
@@ -34,9 +32,9 @@ const EVENTS = [
         <path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2z" />
       </svg>
     ),
-    time: "6:00 PM",
+    time: "Saturday, Oct 17",
     title: "Reception & Dinner",
-    desc: "An evening of feasting, toasts, and dancing under a beautifully adorned marquee beneath the stars.",
+    desc: "An evening of music, dancing, and feasting at the Greenwood Event Centre, Asokwa \u2014 celebrating with everyone we love.",
   },
 ];
 
