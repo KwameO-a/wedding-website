@@ -26,11 +26,22 @@ export const metadata: Metadata = {
   title: "Jesse & Katherine — October 15 & 17, 2026 | Wedding",
   description:
     "Join us in celebrating the wedding of Jesse and Katherine on October 15 & 17, 2026 in Kumasi, Ghana.",
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
     title: "Jesse & Katherine — Wedding",
     description:
       "Together with their families, Jesse and Katherine invite you to celebrate their wedding on October 15 & 17, 2026 in Kumasi, Ghana.",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Jesse and Katherine",
+      },
+    ],
   },
 };
 
