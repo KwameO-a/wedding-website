@@ -23,13 +23,13 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Emma & James — June 21, 2026 | Wedding",
+  title: "Jesse & Katherine — June 21, 2026 | Wedding",
   description:
-    "Join us in celebrating the wedding of Emma and James on June 21, 2026 in The Cotswolds, England.",
+    "Join us in celebrating the wedding of Jesse and Katherine on June 21, 2026 in The Cotswolds, England.",
   openGraph: {
-    title: "Emma & James — Wedding",
+    title: "Jesse & Katherine — Wedding",
     description:
-      "Together with their families, Emma and James invite you to celebrate their wedding on June 21, 2026.",
+      "Together with their families, Jesse and Katherine invite you to celebrate their wedding on June 21, 2026.",
     type: "website",
   },
 };

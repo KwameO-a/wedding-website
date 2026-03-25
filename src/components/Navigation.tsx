@@ -6,7 +6,7 @@ const NAV_LINKS = [
   { label: "The Day", href: "#details" },
   { label: "Gallery", href: "#gallery" },
   { label: "RSVP", href: "#rsvp" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Guest Guide", href: "https://jesse-katherine.vercel.app/", external: true },
 ];
 
 export default function Navigation() {
@@ -46,7 +46,7 @@ export default function Navigation() {
               scrolled ? "text-charcoal" : "text-white"
             }`}
           >
-            E <span className="italic text-gold">&</span> J
+            J <span className="italic text-gold">&</span> K
           </a>
 
           {/* Desktop links */}
@@ -55,7 +55,10 @@ export default function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={(e) => handleClick(e, link.href)}
+                {...(link.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : { onClick: (e: React.MouseEvent<HTMLAnchorElement>) => handleClick(e, link.href) }
+                )}
                 className={`link-underline font-ui text-[11px] uppercase tracking-[0.3em] transition-colors duration-500 ${
                   scrolled ? "text-charcoal" : "text-white"
                 }`}
@@ -102,7 +105,10 @@ export default function Navigation() {
             <a
               key={link.href}
               href={link.href}
-              onClick={(e) => handleClick(e, link.href)}
+              {...(link.external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : { onClick: (e: React.MouseEvent<HTMLAnchorElement>) => handleClick(e, link.href) }
+              )}
               className="font-ui text-sm uppercase tracking-[0.3em] text-white link-underline"
               style={{
                 transitionDelay: menuOpen ? `${i * 80}ms` : "0ms",

@@ -36,27 +36,20 @@ export default function OurStory() {
             </h2>
             <div className="space-y-5 font-body text-lg leading-relaxed text-charcoal/80">
               <p className="reveal stagger-3">
-                It began on a warm July evening in 2020, when two paths
-                unexpectedly crossed at a friend&apos;s gathering. Emma noticed
-                James&apos;s <em className="text-sage-dark font-medium italic">quiet confidence</em>, while James was
-                captivated by Emma&apos;s <em className="text-sage-dark font-medium italic">effortless warmth</em>.
-                What started as a lingering conversation turned into hours that
-                felt like minutes.
+                It started with a <em className="text-sage-dark font-medium italic">chance encounter</em> at
+                a friend&apos;s gathering on a warm summer evening in 2020. What
+                began as casual conversation quickly became hours of talking,
+                laughing, and discovering a connection neither of us expected.
               </p>
               <p className="reveal stagger-4">
-                By December, a proper first date over candlelit dinner confirmed
-                what they both already knew — this was{" "}
-                <em className="text-sage-dark font-medium italic">something extraordinary</em>. From weekend
-                adventures in the countryside to quiet Sunday mornings, they
-                built a love rooted in laughter, kindness, and an unwavering
-                sense of home in each other.
+                Two years of adventures, quiet mornings, and building a life
+                together led to a sunset proposal on the cliffs of the Amalfi
+                Coast. With tears of joy and hearts overflowing, the answer was
+                a resounding <em className="text-sage-dark font-medium italic">yes</em>.
               </p>
               <p className="reveal stagger-5">
-                On a golden September afternoon in 2024, surrounded by the
-                rolling hills of the Cotswolds, James asked Emma to{" "}
-                <em className="text-sage-dark font-medium italic">be his forever</em>. Through happy tears, she
-                said yes — and so began the next beautiful chapter of their
-                story.
+                Now, surrounded by the people we love most, we&apos;re ready to
+                begin the <em className="text-sage-dark font-medium italic">greatest adventure</em> of all.
               </p>
             </div>
           </div>

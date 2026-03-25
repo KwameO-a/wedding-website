@@ -28,7 +28,7 @@ export default function PageLoader() {
     >
       <div className="text-center">
         <div className="flex items-center justify-center gap-3">
-          {["E", "\u00A0&\u00A0", "J"].map((letter, i) => (
+          {["J", "\u00A0&\u00A0", "K"].map((letter, i) => (
             <span
               key={i}
               className={`inline-block font-display text-5xl md:text-7xl ${

@@ -67,7 +67,7 @@ export default function Hero() {
         </p>
 
         {/* Names */}
-        {["Emma", "&", "James"].map((text, i) => (
+        {["Jesse", "&", "Katherine"].map((text, i) => (
           <div key={text} className="overflow-hidden">
             <div
               style={{

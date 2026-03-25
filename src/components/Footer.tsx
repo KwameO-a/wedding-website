@@ -19,7 +19,7 @@ export default function Footer() {
       </div>
 
       <h2 className="font-display text-3xl md:text-5xl text-white mb-4">
-        Emma <span className="italic text-gold">&</span> James
+        Jesse <span className="italic text-gold">&</span> Katherine
       </h2>
 
       <p className="font-ui text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">

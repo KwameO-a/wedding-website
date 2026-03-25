@@ -11,7 +11,6 @@ import EventDetails from "@/components/EventDetails";
 import Gallery from "@/components/Gallery";
 import RSVP from "@/components/RSVP";
 import Registry from "@/components/Registry";
-import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import MusicToggle from "@/components/MusicToggle";
 
@@ -34,7 +33,6 @@ export default function Home() {
         <RSVP />
         <Registry />
         <Divider />
-        <FAQ />
       </main>
       <Footer />
       <MusicToggle />

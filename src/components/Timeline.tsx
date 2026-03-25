@@ -5,27 +5,27 @@ const EVENTS = [
   {
     year: "July 2020",
     title: "First Meeting",
-    desc: "A chance encounter at a mutual friend's summer gathering in London sparked an instant connection.",
+    desc: "A crowded room, two strangers, and a conversation that changed everything.",
   },
   {
     year: "December 2020",
     title: "First Date",
-    desc: "Candlelit dinner at a tucked-away Italian restaurant. Hours passed like minutes.",
+    desc: "Coffee turned into dinner, dinner turned into a moonlit walk, and we knew this was special.",
   },
   {
     year: "August 2022",
     title: "Moving In Together",
-    desc: "A cozy flat in Notting Hill became our first home — filled with books, plants, and love.",
+    desc: "A cozy flat, our first shared morning coffee, and the start of everyday magic.",
   },
   {
     year: "September 2024",
     title: "The Proposal",
-    desc: "Surrounded by golden hour light in the Cotswolds, James asked the question. She said yes.",
+    desc: "Sunset over the Amalfi Coast, a trembling knee, and the most beautiful \u201cyes.\u201d",
   },
   {
     year: "June 2026",
     title: "Forever Begins",
-    desc: "The day we've been dreaming of — surrounded by everyone we love most in this world.",
+    desc: "The day we make it official, surrounded by everyone we love.",
   },
 ];
 
