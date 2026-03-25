@@ -14,7 +14,7 @@ export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 100);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -28,21 +28,37 @@ export default function Navigation() {
 
   return (
     <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-          scrolled
-            ? "bg-white/80 backdrop-blur-[20px] shadow-sm"
-            : "bg-transparent"
-        }`}
-      >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
+      {/* Outer wrapper: fixed, full width, holds the morphing inner bar */}
+      <div className="fixed top-0 left-0 right-0 z-[100] flex justify-center">
+        <nav
+          className="w-full flex items-center justify-between"
+          style={{
+            maxWidth: scrolled ? "min(90%, 960px)" : "100%",
+            marginTop: scrolled ? "12px" : "0px",
+            padding: scrolled ? "10px 28px" : "16px 24px",
+            background: scrolled
+              ? "rgba(255, 255, 255, 0.75)"
+              : "transparent",
+            backdropFilter: scrolled ? "blur(20px)" : "none",
+            WebkitBackdropFilter: scrolled ? "blur(20px)" : "none",
+            borderRadius: scrolled ? "9999px" : "0px",
+            border: scrolled
+              ? "1px solid rgba(197, 165, 114, 0.2)"
+              : "1px solid transparent",
+            boxShadow: scrolled
+              ? "0 4px 30px rgba(0, 0, 0, 0.08)"
+              : "none",
+            transition:
+              "max-width 400ms ease-in-out, margin 400ms ease-in-out, padding 400ms ease-in-out, background-color 400ms ease-in-out, backdrop-filter 400ms ease-in-out, -webkit-backdrop-filter 400ms ease-in-out, border-radius 400ms ease-in-out, border-color 400ms ease-in-out, box-shadow 400ms ease-in-out",
+          }}
+        >
           <a
             href="#"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className={`font-display text-xl transition-colors duration-500 ${
+            className={`font-display text-xl transition-colors duration-400 ${
               scrolled ? "text-charcoal" : "text-white"
             }`}
           >
@@ -50,7 +66,7 @@ export default function Navigation() {
           </a>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
@@ -59,7 +75,7 @@ export default function Navigation() {
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : { onClick: (e: React.MouseEvent<HTMLAnchorElement>) => handleClick(e, link.href) }
                 )}
-                className={`link-underline font-ui text-[11px] uppercase tracking-[0.3em] transition-colors duration-500 ${
+                className={`link-underline font-ui text-[11px] uppercase tracking-[0.25em] transition-colors duration-400 ${
                   scrolled ? "text-charcoal" : "text-white"
                 }`}
               >
@@ -91,8 +107,8 @@ export default function Navigation() {
               />
             ))}
           </button>
-        </div>
-      </nav>
+        </nav>
+      </div>
 
       {/* Mobile overlay */}
       <div
