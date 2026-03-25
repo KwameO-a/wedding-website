@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
 export default function OurStory() {
@@ -11,12 +12,12 @@ export default function OurStory() {
           {/* Image */}
           <div className="reveal stagger-1 relative">
             <div className="relative aspect-[3/4] overflow-hidden rounded-sm group">
-              <div
-                className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(139,157,131,0.3), rgba(197,165,114,0.2), rgba(212,165,154,0.2))",
-                }}
+              <Image
+                src="/couple.jpeg"
+                alt="Jesse and Katherine"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               {/* Gold border overlay */}
               <div className="absolute inset-[-1px] border border-gold-light/40 rounded-sm pointer-events-none" />

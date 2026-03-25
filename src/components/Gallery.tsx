@@ -1,15 +1,16 @@
 "use client";
+import Image from "next/image";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
 const ITEMS = [
-  { label: "The First Look", gradient: "linear-gradient(135deg, #8B9D83, #5E7255)" },
-  { label: "Golden Hour", gradient: "linear-gradient(135deg, #D4A59A, #B8A0A0)" },
-  { label: "The Proposal", gradient: "linear-gradient(135deg, #C5A572, #A68B5B)" },
-  { label: "Amalfi Dreams", gradient: "linear-gradient(135deg, #B8A0A0, #8B9D83)" },
-  { label: "Morning Light", gradient: "linear-gradient(135deg, #5E7255, #C5A572)" },
-  { label: "City Nights", gradient: "linear-gradient(135deg, #D4A59A, #C5A572)" },
-  { label: "Together Always", gradient: "linear-gradient(135deg, #8B9D83, #D4A59A)" },
-  { label: "Adventure Calls", gradient: "linear-gradient(135deg, #C5A572, #8B9D83)" },
+  { label: "The First Look", src: "/couple.jpeg" },
+  { label: "Golden Hour", src: "/starring.jpeg" },
+  { label: "The Proposal", src: "/hugging.jpeg" },
+  { label: "Amalfi Dreams", src: "/look-into-eye.jpeg" },
+  { label: "Morning Light", src: "/couple.jpeg" },
+  { label: "City Nights", src: "/starring.jpeg" },
+  { label: "Together Always", src: "/hugging.jpeg" },
+  { label: "Adventure Calls", src: "/look-into-eye.jpeg" },
 ];
 
 export default function Gallery() {
@@ -41,11 +42,15 @@ export default function Gallery() {
               key={i}
               className="gallery-item h-[420px] w-[320px] flex-shrink-0 overflow-hidden rounded-sm relative"
             >
-              <div
-                className="w-full h-full flex items-center justify-center transition-transform duration-500 ease-out hover:scale-[1.06]"
-                style={{ background: item.gradient }}
-              >
-                <span className="font-display text-xl italic text-white/70">
+              <Image
+                src={item.src}
+                alt={item.label}
+                fill
+                className="object-cover transition-transform duration-500 ease-out hover:scale-[1.06]"
+                sizes="320px"
+              />
+              <div className="absolute inset-0 bg-black/20 flex items-end p-5">
+                <span className="font-display text-lg italic text-white drop-shadow-md">
                   {item.label}
                 </span>
               </div>
