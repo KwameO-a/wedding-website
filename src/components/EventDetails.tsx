@@ -10,7 +10,7 @@ const EVENTS = [
     ),
     time: "Thursday, Oct 15",
     title: "Traditional Wedding",
-    desc: "A beautiful Ghanaian traditional ceremony at Casa Restaurant, Kumasi — where families come together in celebration.",
+    desc: "A beautiful Ghanaian traditional ceremony at Casa, Kumasi — where families come together in celebration.",
   },
   {
     icon: (
