@@ -2,15 +2,17 @@
 import Image from "next/image";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
-const ITEMS = [
-  { label: "The First Look", src: "/couple.jpeg" },
-  { label: "Golden Hour", src: "/starring.jpeg" },
-  { label: "The Proposal", src: "/hugging.jpeg" },
-  { label: "Amalfi Dreams", src: "/look-into-eye.jpeg" },
-  { label: "Morning Light", src: "/couple.jpeg" },
-  { label: "City Nights", src: "/starring.jpeg" },
-  { label: "Together Always", src: "/hugging.jpeg" },
-  { label: "Adventure Calls", src: "/look-into-eye.jpeg" },
+type Item = { label: string; src: string; position?: string };
+
+const ITEMS: Item[] = [
+  { label: "The First Look", src: "/couple.jpeg", position: "30% center" },
+  { label: "Golden Hour", src: "/starring.jpeg", position: "center 30%" },
+  { label: "The Proposal", src: "/hugging.jpeg", position: "center 30%" },
+  { label: "Amalfi Dreams", src: "/look-into-eye.jpeg", position: "65% center" },
+  { label: "Morning Light", src: "/couple.jpeg", position: "30% center" },
+  { label: "City Nights", src: "/starring.jpeg", position: "center 30%" },
+  { label: "Together Always", src: "/hugging.jpeg", position: "center 30%" },
+  { label: "Adventure Calls", src: "/look-into-eye.jpeg", position: "65% center" },
 ];
 
 export default function Gallery() {
@@ -46,7 +48,8 @@ export default function Gallery() {
                 src={item.src}
                 alt={item.label}
                 fill
-                className="object-cover object-center transition-transform duration-500 ease-out hover:scale-[1.06]"
+                style={{ objectPosition: item.position || "center" }}
+                className="object-cover transition-transform duration-500 ease-out hover:scale-[1.06]"
                 sizes="320px"
               />
             </div>
