@@ -108,7 +108,7 @@ export default function Hero() {
             opacity: 0,
           }}
         >
-          October Fifteenth &amp; Seventeenth, Two Thousand &amp; Twenty-Six
+          10.15.26 &nbsp;—&nbsp; 10.17.26
         </p>
       </div>
 
