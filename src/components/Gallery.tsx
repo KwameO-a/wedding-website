@@ -8,11 +8,11 @@ const ITEMS: Item[] = [
   { label: "The First Look", src: "/couple.jpeg", position: "30% center" },
   { label: "Golden Hour", src: "/starring.jpeg", position: "center 30%" },
   { label: "The Proposal", src: "/hugging.jpeg", position: "center 30%" },
-  { label: "Amalfi Dreams", src: "/look-into-eye.jpeg", position: "65% center" },
+  { label: "Amalfi Dreams", src: "/look-into-eye.jpeg", position: "35% center" },
   { label: "Morning Light", src: "/couple.jpeg", position: "30% center" },
   { label: "City Nights", src: "/starring.jpeg", position: "center 30%" },
   { label: "Together Always", src: "/hugging.jpeg", position: "center 30%" },
-  { label: "Adventure Calls", src: "/look-into-eye.jpeg", position: "65% center" },
+  { label: "Adventure Calls", src: "/look-into-eye.jpeg", position: "35% center" },
 ];
 
 export default function Gallery() {
