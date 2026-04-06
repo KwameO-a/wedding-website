@@ -49,11 +49,6 @@ export default function Gallery() {
                 className="object-cover transition-transform duration-500 ease-out hover:scale-[1.06]"
                 sizes="320px"
               />
-              <div className="absolute inset-0 bg-black/20 flex items-end p-5">
-                <span className="font-display text-lg italic text-white drop-shadow-md">
-                  {item.label}
-                </span>
-              </div>
             </div>
           ))}
         </div>
