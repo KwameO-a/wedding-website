@@ -54,13 +54,23 @@ const EVENTS: Event[] = [
   },
 ];
 
-type Status = "pending" | "accepted" | "declined" | "submitted-accept" | "submitted-decline";
+type Status =
+  | "pending"
+  | "accepted"
+  | "declined"
+  | "submitting"
+  | "submitted-accept"
+  | "submitted-decline"
+  | "error";
+
+const ENDPOINT = process.env.NEXT_PUBLIC_RSVP_ENDPOINT || "";
 
 export default function RSVP() {
   const ref = useScrollReveal<HTMLElement>();
   const [selectedId, setSelectedId] = useState<string>(EVENTS[0].id);
   const [name, setName] = useState("");
   const [status, setStatus] = useState<Status>("pending");
+  const [errorMsg, setErrorMsg] = useState("");
 
   // Accept form fields
   const [email, setEmail] = useState("");
@@ -73,17 +83,56 @@ export default function RSVP() {
   const resetForEvent = (id: string) => {
     setSelectedId(id);
     setStatus("pending");
+    setErrorMsg("");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const submitToSheet = async (response: "accepted" | "declined") => {
+    if (!ENDPOINT) {
+      // No endpoint configured — just succeed silently for local dev
+      return true;
+    }
+    try {
+      // Use text/plain to avoid CORS preflight against Apps Script
+      await fetch(ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          event: selected.title,
+          name: name.trim(),
+          response,
+          email: email.trim(),
+          guests: response === "accepted" ? guests : "",
+          dietary: response === "accepted" ? dietary : "",
+          message: message.trim(),
+        }),
+      });
+      // With no-cors we can't read the response, but the request goes through
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim()) return;
-    if (status === "accepted") {
-      if (!email.trim()) return;
-      setStatus("submitted-accept");
-    } else if (status === "declined") {
-      setStatus("submitted-decline");
+    if (status !== "accepted" && status !== "declined") return;
+
+    if (status === "accepted" && !email.trim()) return;
+
+    const responseType = status;
+    setStatus("submitting");
+    setErrorMsg("");
+
+    const ok = await submitToSheet(responseType);
+    if (!ok) {
+      setStatus(responseType);
+      setErrorMsg("Something went wrong. Please try again.");
+      return;
     }
+
+    setStatus(responseType === "accepted" ? "submitted-accept" : "submitted-decline");
   };
 
   return (
@@ -241,7 +290,7 @@ export default function RSVP() {
                 </div>
               )}
 
-              {(status === "pending" || status === "accepted" || status === "declined") && (
+              {(status === "pending" || status === "accepted" || status === "declined" || status === "submitting") && (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label className="block font-ui text-[10px] uppercase tracking-[0.3em] text-charcoal/60 mb-2">
@@ -356,17 +405,34 @@ export default function RSVP() {
             </div>
 
             {/* Footer / Submit bar */}
-            {(status === "accepted" || status === "declined") && (
-              <div className="border-t border-charcoal/10 bg-charcoal/[0.02] px-8 md:px-12 py-5 flex justify-end">
+            {(status === "accepted" || status === "declined" || status === "submitting") && (
+              <div className="border-t border-charcoal/10 bg-charcoal/[0.02] px-8 md:px-12 py-5 flex items-center justify-between gap-4">
+                {errorMsg ? (
+                  <p className="font-body text-sm text-dusty-rose">{errorMsg}</p>
+                ) : (
+                  <span />
+                )}
                 <button
                   type="button"
                   onClick={handleSubmit}
-                  className="inline-flex items-center gap-3 bg-charcoal text-white px-8 py-3 font-ui text-[11px] uppercase tracking-[0.3em] hover:bg-soft-black transition-colors"
+                  disabled={status === "submitting"}
+                  className="inline-flex items-center gap-3 bg-charcoal text-white px-8 py-3 font-ui text-[11px] uppercase tracking-[0.3em] hover:bg-soft-black transition-colors disabled:opacity-60 disabled:cursor-wait"
                 >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  Submit
+                  {status === "submitting" ? (
+                    <>
+                      <svg className="animate-spin" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+                      </svg>
+                      Sending…
+                    </>
+                  ) : (
+                    <>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      Submit
+                    </>
+                  )}
                 </button>
               </div>
             )}
