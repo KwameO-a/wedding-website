@@ -14,6 +14,31 @@ export default function MusicToggle() {
     audio.preload = "auto";
     audioRef.current = audio;
 
+    // Try to autoplay immediately (works if browser allows it)
+    audio
+      .play()
+      .then(() => setPlaying(true))
+      .catch(() => {
+        // Blocked — start on first user interaction instead
+        const startOnInteraction = () => {
+          audio
+            .play()
+            .then(() => setPlaying(true))
+            .catch(() => {});
+          cleanup();
+        };
+        const cleanup = () => {
+          window.removeEventListener("click", startOnInteraction);
+          window.removeEventListener("scroll", startOnInteraction);
+          window.removeEventListener("keydown", startOnInteraction);
+          window.removeEventListener("touchstart", startOnInteraction);
+        };
+        window.addEventListener("click", startOnInteraction, { once: true });
+        window.addEventListener("scroll", startOnInteraction, { once: true });
+        window.addEventListener("keydown", startOnInteraction, { once: true });
+        window.addEventListener("touchstart", startOnInteraction, { once: true });
+      });
+
     return () => {
       audio.pause();
       audioRef.current = null;
