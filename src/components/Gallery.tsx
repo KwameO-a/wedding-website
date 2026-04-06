@@ -46,7 +46,7 @@ export default function Gallery() {
                 src={item.src}
                 alt={item.label}
                 fill
-                className="object-cover transition-transform duration-500 ease-out hover:scale-[1.06]"
+                className="object-cover object-center transition-transform duration-500 ease-out hover:scale-[1.06]"
                 sizes="320px"
               />
             </div>

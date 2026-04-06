@@ -16,7 +16,7 @@ export default function OurStory() {
                 src="/couple.jpeg"
                 alt="Jesse and Katherine"
                 fill
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               {/* Gold border overlay */}
