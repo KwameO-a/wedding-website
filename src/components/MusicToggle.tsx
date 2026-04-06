@@ -14,32 +14,45 @@ export default function MusicToggle() {
     audio.preload = "auto";
     audioRef.current = audio;
 
-    // Try to autoplay immediately (works if browser allows it)
+    let started = false;
+    const events = ["pointerdown", "click", "keydown", "touchstart", "scroll", "wheel"] as const;
+
+    const tryStart = () => {
+      if (started) return;
+      audio
+        .play()
+        .then(() => {
+          started = true;
+          setPlaying(true);
+          removeListeners();
+        })
+        .catch(() => {
+          /* will retry on next event */
+        });
+    };
+
+    const removeListeners = () => {
+      events.forEach((ev) =>
+        document.removeEventListener(ev, tryStart, { capture: true } as EventListenerOptions)
+      );
+    };
+
+    // Attempt immediate autoplay
     audio
       .play()
-      .then(() => setPlaying(true))
+      .then(() => {
+        started = true;
+        setPlaying(true);
+      })
       .catch(() => {
-        // Blocked — start on first user interaction instead
-        const startOnInteraction = () => {
-          audio
-            .play()
-            .then(() => setPlaying(true))
-            .catch(() => {});
-          cleanup();
-        };
-        const cleanup = () => {
-          window.removeEventListener("click", startOnInteraction);
-          window.removeEventListener("scroll", startOnInteraction);
-          window.removeEventListener("keydown", startOnInteraction);
-          window.removeEventListener("touchstart", startOnInteraction);
-        };
-        window.addEventListener("click", startOnInteraction, { once: true });
-        window.addEventListener("scroll", startOnInteraction, { once: true });
-        window.addEventListener("keydown", startOnInteraction, { once: true });
-        window.addEventListener("touchstart", startOnInteraction, { once: true });
+        // Blocked — wait for any user interaction
+        events.forEach((ev) =>
+          document.addEventListener(ev, tryStart, { capture: true, passive: true })
+        );
       });
 
     return () => {
+      removeListeners();
       audio.pause();
       audioRef.current = null;
     };
