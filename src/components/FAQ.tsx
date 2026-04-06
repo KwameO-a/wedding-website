@@ -5,7 +5,7 @@ import useScrollReveal from "@/hooks/useScrollReveal";
 const FAQS = [
   {
     q: "What is the dress code?",
-    a: "We invite you to dress in formal or black-tie optional attire. Think elegant summer — light fabrics, soft colours, and garden-party sophistication. We kindly ask guests to avoid wearing white or ivory.",
+    a: "We invite you to dress in formal or black-tie optional attire. Think elegant summer — light fabrics, soft colors, and garden-party sophistication. We kindly ask guests to avoid wearing white or ivory.",
   },
   {
     q: "Is there parking available?",

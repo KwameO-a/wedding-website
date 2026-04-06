@@ -34,7 +34,7 @@ const EVENTS = [
     ),
     time: "Saturday, Oct 17",
     title: "Reception & Dinner",
-    desc: "An evening of music, dancing, and feasting at the Greenwood Event Centre, Asokwa \u2014 celebrating with everyone we love.",
+    desc: "An evening of music, dancing, and feasting at the Greenwood Event Center, Asokwa \u2014 celebrating with everyone we love.",
   },
 ];
 

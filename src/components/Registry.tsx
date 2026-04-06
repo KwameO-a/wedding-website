@@ -45,7 +45,7 @@ export default function Registry() {
         </h2>
         <p className="reveal stagger-3 mx-auto max-w-lg font-body text-lg text-charcoal/70 mb-16">
           Your presence at our wedding is the greatest gift of all. However, if
-          you wish to honour us with a gift, we&apos;ve registered at the following.
+          you wish to honor us with a gift, we&apos;ve registered at the following.
         </p>
 
         <div className="grid gap-8 md:grid-cols-3">
