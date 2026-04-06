@@ -101,11 +101,12 @@ export default function Hero() {
 
         {/* Date */}
         <p
-          className="mt-8 font-body text-lg md:text-xl font-light tracking-[0.15em] text-sage"
+          className="mt-8 font-body text-xl md:text-2xl font-normal tracking-[0.2em] text-gold"
           style={{
             animation: "loaderLetterUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards",
             animationDelay: "2.6s",
             opacity: 0,
+            textShadow: "0 2px 20px rgba(0,0,0,0.8)",
           }}
         >
           10.15.26 &nbsp;—&nbsp; 10.17.26
