@@ -32,25 +32,33 @@ export default function OurStory() {
               Our Story
             </p>
             <h2 className="reveal stagger-2 font-display text-3xl md:text-5xl text-charcoal mb-8">
-              A Love Written in{" "}
-              <em className="text-sage-dark">the Stars</em>
+              Where It All <em className="text-sage-dark">Began</em>
             </h2>
             <div className="space-y-5 font-body text-lg leading-relaxed text-charcoal/80">
               <p className="reveal stagger-3">
-                It started with a <em className="text-sage-dark font-medium italic">chance encounter</em> at
-                a friend&apos;s gathering on a warm summer evening in 2020. What
-                began as casual conversation quickly became hours of talking,
-                laughing, and discovering a connection neither of us expected.
+                It all started when our paths crossed as kids in{" "}
+                <em className="text-sage-dark font-medium italic">Kumasi, Ghana</em>
+                — two lives briefly intersecting.
+              </p>
+              <p className="reveal stagger-3">
+                Years later, a simple reconnection changed everything. What
+                began as catching up turned into something more, filled with
+                laughter, deep connection, and a love neither of us saw coming.
               </p>
               <p className="reveal stagger-4">
-                Two years of adventures, quiet mornings, and building a life
-                together led to a sunset proposal on the cliffs of the Amalfi
-                Coast. With tears of joy and hearts overflowing, the answer was
-                a resounding <em className="text-sage-dark font-medium italic">yes</em>.
+                From there, our story unfolded naturally — marked by shared
+                experiences, traveling to new places, embracing adventures, and
+                intentionally building a life side by side. With every step,
+                our bond grew stronger, rooted in love, friendship, and purpose.
+              </p>
+              <p className="reveal stagger-4">
+                In June 2025, beneath a breathtaking sunset in{" "}
+                <em className="text-sage-dark font-medium italic">San Pedro, Belize</em>,
+                we said <em className="text-sage-dark font-medium italic">yes</em> to forever.
               </p>
               <p className="reveal stagger-5">
-                Now, surrounded by the people we love most, we&apos;re ready to
-                begin the <em className="text-sage-dark font-medium italic">greatest adventure</em> of all.
+                Now, we&apos;re so excited to return to where it all began —
+                Kumasi — to start this next chapter together.
               </p>
             </div>
           </div>
