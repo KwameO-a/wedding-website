@@ -48,9 +48,9 @@ export default function Timeline() {
               key={event.year}
               className={`reveal stagger-${Math.min(i + 1, 5)} relative mb-14 last:mb-0`}
             >
-              {/* Dot */}
-              <div className="absolute -left-8 md:-left-12 top-1 flex items-center justify-center">
-                <div className="h-3 w-3 rounded-full border-2 border-gold bg-soft-black transition-all duration-300 hover:bg-gold hover:shadow-[0_0_12px_rgba(197,165,114,0.5)]" />
+              {/* Dot — centered on the vertical line */}
+              <div className="absolute -left-8 md:-left-12 top-1">
+                <div className="h-3 w-3 -translate-x-1/2 rounded-full border-2 border-gold bg-soft-black transition-all duration-300 hover:bg-gold hover:shadow-[0_0_12px_rgba(197,165,114,0.5)]" />
               </div>
 
               <p className="font-ui text-[10px] uppercase tracking-[0.3em] text-gold mb-2">
