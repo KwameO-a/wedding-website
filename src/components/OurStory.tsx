@@ -13,10 +13,10 @@ export default function OurStory() {
           <div className="reveal stagger-1 relative">
             <div className="relative aspect-[3/4] overflow-hidden rounded-sm group">
               <Image
-                src="/hero-couple.jpeg"
+                src="/couple.jpeg"
                 alt="Jesse and Katherine"
                 fill
-                style={{ objectPosition: "40% center" }}
+                style={{ objectPosition: "center 30%" }}
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
