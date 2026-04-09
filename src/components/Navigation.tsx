@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const NAV_LINKS = [
   { label: "Our Story", href: "#story" },
@@ -62,7 +62,21 @@ export default function Navigation() {
               scrolled ? "text-charcoal" : "text-white"
             }`}
           >
-            J <span className="italic text-gold">&</span> K
+            {"JK".split("").map((letter, i) => (
+              <span
+                key={letter}
+                className="inline-block"
+                style={{
+                  animation: `logoBounce 2s ease-in-out ${i * 0.15}s infinite`,
+                }}
+              >
+                {letter}
+              </span>
+            )).reduce<React.ReactNode[]>((acc, el, i) => {
+              if (i === 1) acc.push(<span key="amp" className="inline-block italic text-gold mx-[2px]" style={{ animation: `logoBounce 2s ease-in-out 0.075s infinite` }}>&</span>);
+              acc.push(el);
+              return acc;
+            }, [])}
           </a>
 
           {/* Desktop links */}
