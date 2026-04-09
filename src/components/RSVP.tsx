@@ -76,6 +76,7 @@ export default function RSVP() {
   const [email, setEmail] = useState("");
   const [guests, setGuests] = useState("1");
   const [dietary, setDietary] = useState("none");
+  const [arrivalDate, setArrivalDate] = useState("");
   const [message, setMessage] = useState("");
 
   const selected = EVENTS.find((e) => e.id === selectedId)!;
@@ -104,6 +105,7 @@ export default function RSVP() {
           email: email.trim(),
           guests: response === "accepted" ? guests : "",
           dietary: response === "accepted" ? dietary : "",
+          arrivalDate: response === "accepted" ? arrivalDate : "",
           message: message.trim(),
         }),
       });
@@ -349,6 +351,20 @@ export default function RSVP() {
                           placeholder="you@example.com"
                           className="w-full border-b border-charcoal/20 bg-transparent py-2 font-body text-charcoal outline-none transition-colors focus:border-gold placeholder:text-charcoal/30"
                           required
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block font-ui text-[10px] uppercase tracking-[0.3em] text-charcoal/60 mb-2">
+                          Date of Arrival
+                        </label>
+                        <input
+                          type="date"
+                          value={arrivalDate}
+                          onChange={(e) => setArrivalDate(e.target.value)}
+                          min="2026-10-10"
+                          max="2026-10-17"
+                          className="w-full border-b border-charcoal/20 bg-transparent py-2 font-body text-charcoal outline-none transition-colors focus:border-gold placeholder:text-charcoal/30"
                         />
                       </div>
 
