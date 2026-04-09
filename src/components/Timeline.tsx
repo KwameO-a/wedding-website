@@ -3,29 +3,39 @@ import useScrollReveal from "@/hooks/useScrollReveal";
 
 const EVENTS = [
   {
-    year: "July 2020",
-    title: "First Meeting",
-    desc: "A crowded room, two strangers, and a conversation that changed everything.",
+    year: "2007",
+    title: "A Childhood Memory",
+    desc: "Paths crossed in Kumasi, Ghana, leaving an impression that would only grow years later.",
   },
   {
-    year: "December 2020",
-    title: "First Date",
-    desc: "Coffee turned into dinner, dinner turned into a moonlit walk, and we knew this was special.",
+    year: "2013",
+    title: "Reconnection",
+    desc: "A simple message brought us back into each other\u2019s worlds, reminding us that some connections are meant to last.",
   },
   {
-    year: "August 2022",
+    year: "2017",
+    title: "Together Again",
+    desc: "Our first in-person reunion, filled with laughter, stories, and the excitement of rediscovering each other.",
+  },
+  {
+    year: "2020",
+    title: "First Adventure",
+    desc: "Dubai, our first trip together, a magical escape in February 2020 just before the world changed forever.",
+  },
+  {
+    year: "2023",
     title: "Moving In Together",
-    desc: "A cozy flat, our first shared morning coffee, and the start of everyday magic.",
+    desc: "Our first shared home, weekends filled with avocado toast, smoothies, and trips to the farmers market, discovering how perfectly our lives fit together.",
   },
   {
-    year: "September 2024",
+    year: "2025",
     title: "The Proposal",
-    desc: "Sunset over the Amalfi Coast, a trembling knee, and the most beautiful \u201cyes.\u201d",
+    desc: "On a beautiful beach in San Pedro, Belize, a heartfelt \u201cyes\u201d that changed everything.",
   },
   {
     year: "October 2026",
     title: "Forever Begins",
-    desc: "The day we make it official, surrounded by everyone we love.",
+    desc: "The day we celebrate our love surrounded by everyone who matters most, in the place where it all began: Kumasi, Ghana.",
   },
 ];
 
