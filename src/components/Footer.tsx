@@ -31,7 +31,7 @@ export default function Footer() {
       <p className="mt-8 font-ui text-[10px] uppercase tracking-[0.2em] text-white/20">
         Made with love &bull; &copy; 2026 &bull; Built by{" "}
         <a
-          href="https://www.linkedin.com/in/kwame-owusu-a/"
+          href="https://www.linkedin.com/in/eugene-osei-adjapong-948697172/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gold/60 hover:text-gold transition-colors duration-300"
