@@ -46,7 +46,7 @@ export default function Hero() {
         alt="Jesse and Katherine"
         fill
         priority
-        className="object-cover object-[60%_15%] md:object-[center_15%]"
+        className="object-contain object-center md:object-cover md:object-[center_15%]"
         sizes="100vw"
       />
       {/* Dark overlay for text readability */}
