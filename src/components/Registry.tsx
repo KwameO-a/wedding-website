@@ -3,29 +3,10 @@ import useScrollReveal from "@/hooks/useScrollReveal";
 
 const REGISTRIES = [
   {
-    name: "John Lewis",
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-sage">
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-        <polyline points="9 22 9 12 15 12 15 22" />
-      </svg>
-    ),
-  },
-  {
     name: "Honeymoon Fund",
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-      </svg>
-    ),
-  },
-  {
-    name: "Amazon",
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-dusty-rose">
-        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-        <line x1="3" y1="6" x2="21" y2="6" />
-        <path d="M16 10a4 4 0 0 1-8 0" />
       </svg>
     ),
   },
@@ -45,10 +26,10 @@ export default function Registry() {
         </h2>
         <p className="reveal stagger-3 mx-auto max-w-lg font-body text-lg text-charcoal/70 mb-16">
           Your presence at our wedding is the greatest gift of all. However, if
-          you wish to honor us with a gift, we&apos;ve registered at the following.
+          you wish to honor us with a gift, we&apos;d love contributions toward our honeymoon.
         </p>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="flex justify-center">
           {REGISTRIES.map((reg, i) => (
             <div
               key={reg.name}
