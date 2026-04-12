@@ -42,11 +42,11 @@ export default function Hero() {
     <section className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-soft-black">
       {/* Hero background image */}
       <Image
-        src="/hero-couple.jpeg"
+        src="/739A6275_retouch.jpg"
         alt="Jesse and Katherine"
         fill
         priority
-        className="object-cover object-[58%_35%] md:object-[center_15%]"
+        className="object-cover object-[50%_30%] md:object-[center_20%]"
         sizes="100vw"
       />
       {/* Dark overlay for text readability */}
