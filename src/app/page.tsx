@@ -10,7 +10,6 @@ import ParallaxQuote from "@/components/ParallaxQuote";
 import EventDetails from "@/components/EventDetails";
 import Gallery from "@/components/Gallery";
 import RSVP from "@/components/RSVP";
-import ParallaxQuote2 from "@/components/ParallaxQuote2";
 import Registry from "@/components/Registry";
 import Footer from "@/components/Footer";
 import MusicToggle from "@/components/MusicToggle";
@@ -31,7 +30,6 @@ export default function Home() {
         <EventDetails />
         <Divider />
         <Gallery />
-        <ParallaxQuote2 />
         <RSVP />
         <Registry />
         <Divider />

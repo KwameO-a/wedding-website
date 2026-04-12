@@ -17,10 +17,10 @@ export default function ParallaxQuote() {
 
       <div className="relative z-10 mx-auto max-w-3xl px-8 text-center">
         <blockquote className="reveal stagger-1 font-display italic text-[1.5rem] md:text-[2.5rem] leading-snug text-white">
-          &ldquo;Whatever our souls are made of, his and mine are the same.&rdquo;
+          &ldquo;I have found the one whom my soul loves.&rdquo;
         </blockquote>
         <p className="reveal stagger-2 mt-6 font-ui text-[10px] uppercase tracking-[0.3em] text-gold-light">
-          Emily Bront&euml;
+          Song of Solomon 3:4
         </p>
       </div>
     </section>
