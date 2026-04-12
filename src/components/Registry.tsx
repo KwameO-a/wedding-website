@@ -30,20 +30,24 @@ export default function Registry() {
         </p>
 
         <div className="flex justify-center">
-          {REGISTRIES.map((reg, i) => (
-            <div
-              key={reg.name}
-              className={`reveal stagger-${i + 1} card-hover cursor-pointer rounded-sm border border-charcoal/5 bg-warm-white p-10 text-center`}
-            >
-              <div className="mb-5 flex justify-center">{reg.icon}</div>
-              <h3 className="font-display text-lg text-charcoal mb-3">
-                {reg.name}
-              </h3>
-              <span className="font-ui text-[10px] uppercase tracking-[0.2em] text-sage link-underline">
-                View Registry
-              </span>
+          <a
+            href="https://venmo.com/u/katherine-adu-bonsu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="reveal stagger-1 card-hover cursor-pointer rounded-sm border border-charcoal/5 bg-warm-white p-10 md:px-20 text-center group"
+          >
+            <div className="mb-5 flex justify-center">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
             </div>
-          ))}
+            <h3 className="font-display text-lg text-charcoal mb-3">
+              Honeymoon Fund
+            </h3>
+            <span className="font-ui text-[10px] uppercase tracking-[0.2em] text-sage link-underline group-hover:text-gold transition-colors">
+              Contribute via Venmo
+            </span>
+          </a>
         </div>
       </div>
     </section>
