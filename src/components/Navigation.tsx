@@ -124,6 +124,25 @@ export default function Navigation() {
         </nav>
       </div>
 
+      {/* Mobile sticky Guest Guide button */}
+      <a
+        href="https://jesse-katherine.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[98] md:hidden flex items-center gap-2 bg-gold text-white px-6 py-3 rounded-full shadow-lg font-ui text-[10px] uppercase tracking-[0.3em] hover:bg-gold/90 transition-colors"
+        style={{
+          animation: "loaderLetterUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards",
+          animationDelay: "3s",
+          opacity: 0,
+        }}
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+        </svg>
+        Guest Guide
+      </a>
+
       {/* Mobile overlay */}
       <div
         className={`fixed inset-0 z-[99] flex items-center justify-center bg-soft-black transition-opacity duration-500 ${
